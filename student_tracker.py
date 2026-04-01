@@ -225,7 +225,7 @@ class StudentTracker(object):
         if now - self._last_publish_time >= PUBLISH_INTERVAL_S:
             sample = {
                 't': time.strftime('%H:%M:%S'),
-                'v': round(br.attention_score, 3),
+                'v': round(br.engagement_score, 3),
             }
             self._attention_ts.append(sample)
             if len(self._attention_ts) > TIMESERIES_MAX_LEN:
